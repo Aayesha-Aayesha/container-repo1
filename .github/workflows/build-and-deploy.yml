@@ -16,6 +16,6 @@ jobs:
           login-server: containerregistory2.azurecr.io
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
-      - run:
-          docker buildx build . -t containerregistory2.azurecr.io/myapp:${{github.sha}}
-          docker push containerregistory2.azurecr.io/myapp:${{github.sha}}
+      - run: |
+          docker buildx build . -t containerregistory2.azurecr.io/myapp:${{ github.sha }}
+          docker push containerregistory2.azurecr.io/myapp:${{ github.sha }}
